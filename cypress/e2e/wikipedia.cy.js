@@ -25,13 +25,18 @@ describe('the Wikipedia website', () => {
                         const expectedText = `"${$titleHeader.text()}" and its talk page have been added to your watchlist permanently.`;
 
                         cy.get('body').then($body => {
+                            // Cypress doesn't seem to provide a more elegant way to conditionally handle non-deterministic behavior...
                             if ($body.find('button[type="submit"]').length > 0) {
+                                // After clicking the "Add to wishlist" link above, Wikipedia may respond with a full-page alert
+                                //  that requires an additional action to ensure the article is added successfully
                                 cy.get('button[type="submit"]')
                                     .click();
 
                                 cy.get('#mw-content-text')
                                     .should('contain.text', expectedText);
                             } else {
+                                // Othertimes Wikipedia responds with a pop-up notification that does not require any additional
+                                // action to ensure the article is added successfully.
                                 cy.get('#mw-notification-area label')
                                     .first()
                                     .should('be.visible')

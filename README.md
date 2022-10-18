@@ -1,5 +1,7 @@
 # cypress-example
 
+[![Acceptance](https://github.com/finddaniel/cypress-example/actions/workflows/acceptance.yml/badge.svg)](https://github.com/finddaniel/cypress-example/actions/workflows/acceptance.yml)
+
 ### Getting started
 
 Required dependencies need to be pre-installed:

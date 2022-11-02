@@ -10,8 +10,8 @@
         "test": "npx cypress run --browser chrome"
     },
     "devDependencies": {
-        "cypress": "^10.10.0",
-        "eslint": "^8.25.0",
+        "cypress": "^10.11.0",
+        "eslint": "^8.26.0",
         "eslint-plugin-cypress": "^2.12.1"
     }
 }
